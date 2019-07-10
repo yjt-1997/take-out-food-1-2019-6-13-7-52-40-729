@@ -1,5 +1,25 @@
 describe('Take out food', function () {
 
+  //isExsit非法输入测试
+  it ('should return false when invoke isExsit given ["ITEM0100"]', () => {
+    //given
+    const inputs = ["ITEM0100"];
+    //when
+    const result = isExsit(inputs);
+    //then
+    expect(result).toBe(false);
+  });
+
+  //isExsit合法输入测试
+  it ('should return true when invoke isExsit given ["ITEM0001"]', () => {
+    //given
+    const inputs = ["ITEM0001"];
+    //when
+    const result = isExsit(inputs);
+    //then
+    expect(result).toBe(true);
+  });
+
   it('should generate best charge when best is 指定菜品半价', function() {
     let inputs = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
     let summary = bestCharge(inputs).trim();
@@ -29,7 +49,7 @@ describe('Take out food', function () {
 满30减6元，省6元
 -----------------------------------
 总计：26元
-===================================`.trim()
+===================================`.trim();
     expect(summary).toEqual(expected)
   });
 
@@ -41,7 +61,7 @@ describe('Take out food', function () {
 肉夹馍 x 4 = 24元
 -----------------------------------
 总计：24元
-===================================`.trim()
+===================================`.trim();
     expect(summary).toEqual(expected)
   });
 
