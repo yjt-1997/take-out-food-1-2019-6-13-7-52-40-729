@@ -19,3 +19,14 @@ function isValid(inputs) {
   }
   return true;
 }
+function getBuyedItems(inputs){
+  let buyedItems = new Array();
+  let index = 0;
+  for(let i=0;i<inputs.length;i++){
+    let inputItem = inputs[i].split("x");
+    let itemId = inputItem[0].trim();
+    let number = parseInt(inputItem[1].trim());
+    buyedItems.push({itemId:itemId,number:number});
+  }
+  return buyedItems;
+}

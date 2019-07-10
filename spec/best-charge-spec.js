@@ -40,6 +40,20 @@ describe('Take out food', function () {
     expect(result).toBe(true);
   });
 
+  //getBuyedItems输出测试
+  it ('should return Array[Object] when invoke isExsit given ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"]', () => {
+    //given
+    const inputs = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
+    //when
+    const result = getBuyedItems(inputs);
+    //then
+    expect(result).toEqual([
+      {itemId: "ITEM0001", number: 1},
+      {itemId: "ITEM0013", number: 2},
+      {itemId: "ITEM0022", number: 1}
+    ]);
+  });
+
   it('should generate best charge when best is 指定菜品半价', function() {
     let inputs = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
     let summary = bestCharge(inputs).trim();
