@@ -54,6 +54,26 @@ describe('Take out food', function () {
     ]);
   });
 
+  //isInPro非法输入测试
+  it ('should return false when invoke isInPro given ["NotInPro"]', () => {
+    //given
+    const inputs = ["NotInPro"];
+    //when
+    const result = isInPro(inputs);
+    //then
+    expect(result).toBe(false);
+  });
+
+  //isInPro合法输入测试
+  it ('should return true when invoke isInPro given ["ITEM0001"]', () => {
+    //given
+    const inputs = ["ITEM0001"];
+    //when
+    const result = isInPro(inputs);
+    //then
+    expect(result).toBe(true);
+  });
+
   it('should generate best charge when best is 指定菜品半价', function() {
     let inputs = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
     let summary = bestCharge(inputs).trim();

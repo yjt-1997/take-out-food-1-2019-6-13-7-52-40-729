@@ -30,3 +30,11 @@ function getBuyedItems(inputs){
   }
   return buyedItems;
 }
+function isInPro(itemId){
+  let halfIds = promotions[1].items;
+  for(let i=0;i<halfIds.length;i++){
+    if(halfIds[i]==itemId)
+      return true;
+  }
+  return false;
+}
