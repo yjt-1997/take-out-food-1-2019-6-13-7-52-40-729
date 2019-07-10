@@ -20,6 +20,26 @@ describe('Take out food', function () {
     expect(result).toBe(true);
   });
 
+  //isValid非法输入测试
+  it ('should return false when invoke isExsit given ["ITEM0001 x 1.1"]', () => {
+    //given
+    const inputs = ["ITEM0001 x 1.1"];
+    //when
+    const result = isValid(inputs);
+    //then
+    expect(result).toBe(false);
+  });
+
+  //isValid合法输入测试
+  it ('should return true when invoke isExsit given ["ITEM0001 x 1"]', () => {
+    //given
+    const inputs = ["ITEM0001 x 1"];
+    //when
+    const result = isValid(inputs);
+    //then
+    expect(result).toBe(true);
+  });
+
   it('should generate best charge when best is 指定菜品半价', function() {
     let inputs = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
     let summary = bestCharge(inputs).trim();
