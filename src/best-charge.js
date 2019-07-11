@@ -84,7 +84,6 @@ function bestCharge(inputs) {
     return bestCharge;
   }
 }
-console.log(bestCharge(["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"]));
 module.exports = {
   isExsit, isValid, getBuyedItems, isInPro, bestCharge
 }
